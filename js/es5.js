@@ -150,7 +150,7 @@ var gameController = (function () {
     },
 
     getPlayeTurn: function () {
-      // If the round es even is player 1 and if the round is odd is player 2
+      // If the round is even is player 1 and if the round is odd is player 2
       var playerNumber;
 
       if (data.rounds % 2 == 0) {
@@ -171,9 +171,9 @@ var gameController = (function () {
     },
 
     // Debugging
-    testData: function () {
-      return data;
-    },
+    // testData: function () {
+    //   return data;
+    // },
   };
 })();
 
@@ -199,7 +199,6 @@ var UIController = (function () {
 
     unlockGame: function () {
       var children = document.querySelector(DOMvalues.btnContainer).children;
-      //console.log(children);
 
       for (var i = 0; i < children.length; i++) {
         document.getElementById(children[i].id).style.pointerEvents = "auto";
@@ -299,6 +298,7 @@ var globalController = (function (gameCtrl, UICtrl) {
     document.addEventListener("keypress", function (event) {
       // Event to the enter key
       if (event.keyCode === 13 || event.which === 13) {
+        // 13 is the key number for the enter key
         storePlayerName(playerNumber);
       }
     });
@@ -314,7 +314,6 @@ var globalController = (function (gameCtrl, UICtrl) {
 
           // Test if is win
           var win = gameCtrl.checkWinFor();
-          //console.log(win);
 
           // If a player win performs the reset of the game
           if (win === 2) {
@@ -388,7 +387,7 @@ var globalController = (function (gameCtrl, UICtrl) {
       gameCtrl.getPlayers()[0].playerName !== "" &&
       gameCtrl.getPlayers()[1].playerName !== ""
     ) {
-      // If the players already take the name, unlock the game
+      // If the players already took the name, unlock the game
       var DOM = UICtrl.getDomValues();
       UICtrl.unlockGame();
       UICtrl.displayPlayerTurn(

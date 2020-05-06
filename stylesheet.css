@@ -126,6 +126,9 @@ p {
   cursor: pointer;
 
   -o-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
   transition: transform 0.5s;
 }
 
@@ -133,6 +136,8 @@ p {
   background-image: url("imgs/bAccept.png");
   /* transform: translateY(-2px); */
   -o-transform: scale(1.3, 1.3);
+  -moz-transform: scale(1.3, 1.3);
+  -ms-transform: scale(1.3, 1.3);
   -webkit-transform: scale(1.3, 1.3);
   transform: scale(1.3, 1.3);
 }
@@ -189,6 +194,8 @@ p {
   cursor: pointer;
 
   -o-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -ms-transition: transform 0.5s;
   -webkit-transition: transform 0.5s;
   transition: transform 0.5s;
 }
@@ -197,6 +204,8 @@ p {
   background-image: url("imgs/bpc.png");
 
   -o-transform: scale(1.3, 1.3);
+  -moz-transform: scale(1.3, 1.3);
+  -ms-transform: scale(1.3, 1.3);
   -webkit-transform: scale(1.3, 1.3);
   transform: scale(1.3, 1.3) rotate(90deg);
 }

@@ -17,6 +17,5 @@ Feel free to download it and improve it. If you want just give a pull request wi
 - [Instagram](https://www.instagram.com/bitinbyte/)
 - [Twitter](https://twitter.com/BitInByte2)
 ## Authors
-**BitInByte** 
-Development student and tech enthusiastic
+**BitInByte** - Development student and tech enthusiastic
 

@@ -72,7 +72,8 @@ var gameController = (function () {
       }
     },
 
-    checkWinFor: function (fn) {
+    checkWinFor: function () {
+      // Check if the player already won the game or if it's a draw
       for (var i = 0; i < 3; i++) {
         if (
           data.board[i][0] === 1 &&
@@ -137,12 +138,14 @@ var gameController = (function () {
     },
 
     resetGame: function () {
+      // Reset the board
       for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
           data.board[i][j] = 0;
         }
       }
 
+      // Reset the rounds
       data.rounds = 0;
     },
 
@@ -247,6 +250,7 @@ var UIController = (function () {
     },
 
     resetUI: function (playerName, wins) {
+      // Reset all of the User Interface elements
       var children = document.querySelector(DOMvalues.btnContainer).children;
       for (var i = 0; i < children.length; i++) {
         document.getElementById(children[i].id).style.pointerEvents = "auto";
@@ -305,15 +309,11 @@ var globalController = (function (gameCtrl, UICtrl) {
       document
         .getElementById(children[i].id)
         .addEventListener("click", function () {
-          var playerTurn = gameCtrl.getPlayeTurn();
-          //var win = [];
-          //console.log(gameCtrl.getPlayeTurn());
-
           // Add a value to the board array
           gameCtrl.arrayReg(i, gameCtrl.getPlayeTurn());
 
           // Test if is win
-          var win = gameCtrl.checkWinFor(UICtrl.winMessage);
+          var win = gameCtrl.checkWinFor();
           //console.log(win);
 
           // If a player win performs the reset of the game
@@ -372,6 +372,7 @@ var globalController = (function (gameCtrl, UICtrl) {
     var name = document.querySelector(DOM.plForm).value;
 
     if (name === "") {
+      // Alert if the form is empty
       alert("You need to insert a name!");
     } else {
       gameCtrl.changePlayerName(player, name);
@@ -409,4 +410,5 @@ var globalController = (function (gameCtrl, UICtrl) {
   };
 })(gameController, UIController);
 
+// Call the start process function
 globalController.init();

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>A Tic Tac Toe Game</title>
+    <meta name="description" content="A Tic Tac Toe Game" />
+    <meta name="author" content="BitInByte" />
+    <link id="ss" rel="stylesheet" href="stylesheet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="display">
+        <p id="displayText">Insert username for player 1 and player 2</p>
+      </div>
+
+      <div id="cName">
+        <div id="nBar">
+          <form action="">
+            <!--<label for="name">Insert your name</label>-->
+            <input
+              type="text"
+              placeholder="Insert your name"
+              name="user"
+              id="cBarForm"
+              required
+            />
+          </form>
+        </div>
+
+        <a id="aName"></a>
+      </div>
+
+      <div class="plDisplays">
+        <div class="pRow">
+          <div class="plDisplay">
+            <p id="pl1" class="pName">Please Add a name for P1</p>
+          </div>
+
+          <a id="bpc1" class="bpc"></a>
+        </div>
+        <div class="pRow">
+          <div class="plDisplay">
+            <p id="pl2" class="pName">Please Add a name for P2</p>
+          </div>
+          <a id="bpc2" class="bpc"></a>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <div id="bt0" class="bt"><p>N</p></div>
+        <div id="bt1" class="bt"><p>N</p></div>
+        <div id="bt2" class="bt"><p>N</p></div>
+        <div id="bt3" class="bt"><p>N</p></div>
+        <div id="bt4" class="bt"><p>N</p></div>
+        <div id="bt5" class="bt"><p>N</p></div>
+        <div id="bt6" class="bt"><p>N</p></div>
+        <div id="bt7" class="bt"><p>N</p></div>
+        <div id="bt8" class="bt"><p>N</p></div>
+      </div>
+      <div id="newGame">
+        <p id="gameFinish"></p>
+      </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/main.js"></script> -->
+    <script type="text/javascript" src="js/es5.js"></script>
+  </body>
+</html>

@@ -72,160 +72,216 @@ var gameController = (function () {
       }
     },
 
-    checkWin: function () {
-      // TODO Converter este algoritmo para for, for 0 para row, 1 para outra row, depois e so checkar de coluna a coluna estaticamente
-      // Check with the array if a player won the game
-      if (
-        data.board[0][0] === 1 &&
-        data.board[0][1] === 1 &&
-        data.board[0][2] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][0] === 2 &&
-        data.board[0][1] === 2 &&
-        data.board[0][2] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[1][0] === 1 &&
-        data.board[1][1] === 1 &&
-        data.board[1][2] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[1][0] === 2 &&
-        data.board[1][1] === 2 &&
-        data.board[1][2] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[2][0] === 1 &&
-        data.board[2][1] === 1 &&
-        data.board[2][2] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[2][0] === 2 &&
-        data.board[2][1] === 2 &&
-        data.board[2][2] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][0] === 1 &&
-        data.board[1][0] === 1 &&
-        data.board[2][0] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][0] === 2 &&
-        data.board[1][0] === 2 &&
-        data.board[2][0] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][1] === 1 &&
-        data.board[1][1] === 1 &&
-        data.board[2][1] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][1] === 2 &&
-        data.board[1][1] === 2 &&
-        data.board[2][1] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][2] === 1 &&
-        data.board[1][2] === 1 &&
-        data.board[2][2] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][2] === 2 &&
-        data.board[1][2] === 2 &&
-        data.board[2][2] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][0] === 1 &&
-        data.board[1][1] === 1 &&
-        data.board[2][2] === 1
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][0] === 2 &&
-        data.board[1][1] === 2 &&
-        data.board[2][2] === 2
-      ) {
-        alert("Player 1 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][2] === 1 &&
-        data.board[1][1] === 1 &&
-        data.board[2][0] === 1
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (
-        data.board[0][2] === 2 &&
-        data.board[1][1] === 2 &&
-        data.board[2][0] === 2
-      ) {
-        alert("Player 2 wins");
-        // Show win label
-
-        // Reset game
-      } else if (data.round === 8) {
-        alert("Draw!");
-        // Show win label
-
-        // Reset game
+    checkWinFor: function () {
+      for (var i = 0; i < 3; i++) {
+        if (
+          data.board[i][0] === 1 &&
+          data.board[i][1] === 1 &&
+          data.board[i][2] === 1
+        ) {
+          alert("Player 1 won");
+        } else if (
+          data.board[i][0] === 2 &&
+          data.board[i][1] === 2 &&
+          data.board[i][2] === 2
+        ) {
+          alert("Player 2 won");
+        } else if (
+          data.board[0][i] === 1 &&
+          data.board[1][i] === 1 &&
+          data.board[2][i] === 1
+        ) {
+          alert("Player 1 won");
+        } else if (
+          data.board[0][i] === 2 &&
+          data.board[1][i] === 2 &&
+          data.board[2][i] === 2
+        ) {
+          alert("Player 2 won");
+        } else if (
+          data.board[0][0] === 1 &&
+          data.board[1][1] === 1 &&
+          data.board[2][2] === 1
+        ) {
+          alert("Player 1 won");
+        } else if (
+          data.board[0][0] === 2 &&
+          data.board[1][1] === 2 &&
+          data.board[2][2] === 2
+        ) {
+          alert("Player 2 won");
+        } else if (
+          data.board[0][2] === 1 &&
+          data.board[1][1] === 1 &&
+          data.board[2][0] === 1
+        ) {
+          alert("Player 1 won");
+        } else if (
+          data.board[0][2] === 2 &&
+          data.board[1][1] === 2 &&
+          data.board[2][0] === 2
+        ) {
+          alert("Player 2 won");
+        } else if (data.rounds === 8) {
+          alert("Draw");
+        }
       }
     },
+
+    // checkWin: function () {
+    //   // TODO Converter este algoritmo para for, for 0 para row, 1 para outra row, depois e so checkar de coluna a coluna estaticamente
+    //   // Check with the array if a player won the game
+    //   if (
+    //     data.board[0][0] === 1 &&
+    //     data.board[0][1] === 1 &&
+    //     data.board[0][2] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][0] === 2 &&
+    //     data.board[0][1] === 2 &&
+    //     data.board[0][2] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[1][0] === 1 &&
+    //     data.board[1][1] === 1 &&
+    //     data.board[1][2] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[1][0] === 2 &&
+    //     data.board[1][1] === 2 &&
+    //     data.board[1][2] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[2][0] === 1 &&
+    //     data.board[2][1] === 1 &&
+    //     data.board[2][2] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[2][0] === 2 &&
+    //     data.board[2][1] === 2 &&
+    //     data.board[2][2] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][0] === 1 &&
+    //     data.board[1][0] === 1 &&
+    //     data.board[2][0] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][0] === 2 &&
+    //     data.board[1][0] === 2 &&
+    //     data.board[2][0] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][1] === 1 &&
+    //     data.board[1][1] === 1 &&
+    //     data.board[2][1] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][1] === 2 &&
+    //     data.board[1][1] === 2 &&
+    //     data.board[2][1] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][2] === 1 &&
+    //     data.board[1][2] === 1 &&
+    //     data.board[2][2] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][2] === 2 &&
+    //     data.board[1][2] === 2 &&
+    //     data.board[2][2] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][0] === 1 &&
+    //     data.board[1][1] === 1 &&
+    //     data.board[2][2] === 1
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][0] === 2 &&
+    //     data.board[1][1] === 2 &&
+    //     data.board[2][2] === 2
+    //   ) {
+    //     alert("Player 1 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][2] === 1 &&
+    //     data.board[1][1] === 1 &&
+    //     data.board[2][0] === 1
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (
+    //     data.board[0][2] === 2 &&
+    //     data.board[1][1] === 2 &&
+    //     data.board[2][0] === 2
+    //   ) {
+    //     alert("Player 2 wins");
+    //     // Show win label
+
+    //     // Reset game
+    //   } else if (data.round === 8) {
+    //     alert("Draw!");
+    //     // Show win label
+
+    //     // Reset game
+    //   }
+    // },
 
     getPlayeTurn: function () {
       // If the round es even is player 1 and if the round is odd is player 2
@@ -294,6 +350,16 @@ var UIController = (function () {
       }
     },
 
+    changeBtnPlayer: function (id, playerNumber) {
+      // Place a player string on the buttons according to the player that clicked
+      document.getElementById(id).textContent = playerNumber === 0 ? "X" : "O";
+    },
+
+    blockBtn: function (btn) {
+      // Block the button to dont be able to be playable again
+      document.getElementById(btn).style.pointerEvents = "none";
+    },
+
     // play: function (rounds, playerName) {
     //   if (rounds % 2 == 0) {
     //     displayPlayerTurn(playerName);
@@ -350,20 +416,28 @@ var globalController = (function (gameCtrl, UICtrl) {
       document
         .getElementById(children[i].id)
         .addEventListener("click", function () {
-          // Change the display for the current player
-          UICtrl.displayPlayerTurn(
-            gameCtrl.getPlayers()[gameCtrl.getPlayeTurn()].playerName
-          );
+          var playerTurn = gameCtrl.getPlayeTurn();
+          //console.log(gameCtrl.getPlayeTurn());
 
           // Add a value to the board array
           gameCtrl.arrayReg(i, gameCtrl.getPlayeTurn());
 
           // Test if is win
-          gameCtrl.checkWin();
-          // Block the btn and add text content
+          gameCtrl.checkWinFor();
+
+          // add Player text content
+          UICtrl.changeBtnPlayer(children[i].id, gameCtrl.getPlayeTurn());
+
+          // Block the btn
+          UICtrl.blockBtn(children[i].id);
 
           // Add one more round after the click
           gameCtrl.newRound();
+
+          // Change the display for the current player
+          UICtrl.displayPlayerTurn(
+            gameCtrl.getPlayers()[gameCtrl.getPlayeTurn()].playerName
+          );
         });
     }
   };

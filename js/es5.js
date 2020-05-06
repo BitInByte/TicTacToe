@@ -189,6 +189,7 @@ var UIController = (function () {
     gameDisplay: "#displayText",
     gameFinishDisplay: "#newGame",
     gameFinishLabel: "#gameFinish",
+    btnLabel: ".btP",
   };
   return {
     // Public methods
@@ -245,28 +246,20 @@ var UIController = (function () {
       }
     },
 
-    resetUI: function (playerName) {
+    resetUI: function (playerName, wins) {
       var children = document.querySelector(DOMvalues.btnContainer).children;
       for (var i = 0; i < children.length; i++) {
         document.getElementById(children[i].id).style.pointerEvents = "auto";
         document.getElementById(children[i].id).textContent = "";
       }
 
-      document.querySelector(DOMvalues.gameDisplay).textContent =
-        "Player " + playerName + " its your turn";
+      this.displayPlayerTurn(playerName, wins);
     },
 
-    // play: function (rounds, playerName) {
-    //   if (rounds % 2 == 0) {
-    //     displayPlayerTurn(playerName);
-    //   } else {
-    //   }
-    // },
-
-    displayPlayerTurn: function (playerName) {
+    displayPlayerTurn: function (playerName, wins) {
       // Change the player name on the display
-      document.querySelector(DOMvalues.gameDisplay).textContent =
-        "Player " + playerName + " its your turn";
+      document.querySelector(DOMvalues.gameDisplay).innerHTML =
+        "Player " + playerName + " its your turn<br>Wins: " + wins;
     },
 
     getDomValues: function () {
@@ -328,14 +321,20 @@ var globalController = (function (gameCtrl, UICtrl) {
             // Message win game
             UICtrl.winMessage(win, "Draw");
             // Reset UI
-            UICtrl.resetUI(gameCtrl.getPlayers()[0].playerName);
+            UICtrl.resetUI(
+              gameCtrl.getPlayers()[0].playerName,
+              gameCtrl.getPlayers()[0].wins
+            );
             // Reset game data
             gameCtrl.resetGame();
           } else if (win !== undefined) {
             // Message win game
             UICtrl.winMessage(win, gameCtrl.getPlayers()[win].playerName);
             // Reset UI
-            UICtrl.resetUI(gameCtrl.getPlayers()[0].playerName);
+            UICtrl.resetUI(
+              gameCtrl.getPlayers()[0].playerName,
+              gameCtrl.getPlayers()[0].wins
+            );
             // Reset game data
             gameCtrl.resetGame();
           }
@@ -354,7 +353,8 @@ var globalController = (function (gameCtrl, UICtrl) {
 
           // Change the display for the current player
           UICtrl.displayPlayerTurn(
-            gameCtrl.getPlayers()[gameCtrl.getPlayeTurn()].playerName
+            gameCtrl.getPlayers()[gameCtrl.getPlayeTurn()].playerName,
+            gameCtrl.getPlayers()[gameCtrl.getPlayeTurn()].wins
           );
         });
     }
@@ -390,7 +390,10 @@ var globalController = (function (gameCtrl, UICtrl) {
       // If the players already take the name, unlock the game
       var DOM = UICtrl.getDomValues();
       UICtrl.unlockGame();
-      UICtrl.displayPlayerTurn(gameCtrl.getPlayers()[0].playerName);
+      UICtrl.displayPlayerTurn(
+        gameCtrl.getPlayers()[0].playerName,
+        gameCtrl.getPlayers()[0].wins
+      );
     }
 
     document.querySelector(DOM.plForm).value = null;

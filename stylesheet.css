@@ -307,7 +307,7 @@ p {
   font-size: 72px;
 }
 
-/*TODO Trabalhar no responsivo*/
+/* Tablet Version */
 @media screen and (max-width: 1000px) {
   #container {
     height: 1000px;
@@ -345,6 +345,7 @@ p {
   }
 }
 
+/* Phone Version */
 @media screen and (max-width: 650px) {
   body {
     background-color: #45484d;
@@ -438,8 +439,14 @@ p {
   }
 
   #newGame {
-    top: 455px;
+    width: 80%;
+    height: 50%;
+    top: 500px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  #gameFinish {
+    font-size: 45px;
   }
 }

@@ -1,7 +1,7 @@
 # TicTacToe Game
 ## [Check it here](https://bitinbyte.github.io/TicTacToe/)
 ![Thumbnail](thumbnail.png)
-Game created with ES5 Vanilla JavasCript HTML and CSS
+Game created with ES5 Vanilla JavaScript HTML and CSS
 ## Getting Started
 Just clone the git or check it live on the link above. Feel free to use it and to let me know what could be improved!
 ## Specifications
